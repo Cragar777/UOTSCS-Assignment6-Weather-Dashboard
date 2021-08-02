@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body onload="getCityCoord()">
+    <header>
+        <h1 class="col-12">Weather Dashboard</h1>
+    </header>
+
+    <div class="city">
+        <!-- Input for city entry -->
+        <div><h2 class="searchTitle">Search for a City:</h2></div>
+        <div><input class="cityInput" name="city" id="searchCity" type="text" value="city"/></div>
+        <div><button type="submit" class="btn">Search</button></div>
+    </div>
+
+    <!-- Current selected City weather w/city, date, temp, wind, humidity, uv index-->
+    <div id="currentWeather">
+        <span id="cityDate"></span>
+        <span id="currentDate"></span>
+        <span id="temp"></span>
+        <span id="wind"></span>
+        <span id="humidity"></span>
+        <span id="uv"></span> 
+    </div>
+
+     <!-- Five day forecast for selected City w/date, icon, temp, wind, humidity -->
+    <div id="fiveDay">
+        <span id="fiveTitle"></span>
+        <span id="fiveDate"></span>
+        <span id="fiveIcon"></span>
+        <span id="fiveTemp"></span>
+        <span id="fiveWind"></span>
+        <span id="fiveHumidity"></span> 
+    </div>
+
+    <div class="col-12 cityHistory">
+        <button class="col-2">History 1</button>
+        <button class="col-2">History 2</button>
+        <button>History 3</button>
+        <button>History 4</button>
+        <button>History 5</button>
+        <button>History 6</button>
+        <button>History 7</button>
+        <button>History 8</button>
+    </div>
+    <footer>
+        <h3>&copy; Copyright 2021 Weather Dashboard</h3>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>    
+</body>
+
+</html>
+
