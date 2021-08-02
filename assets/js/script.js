@@ -37,9 +37,11 @@ function getWeather(lat, lon) {
             document.getElementById("wind").innerText="Wind: " + data.current.wind_speed + "MPH";
             document.getElementById("humidity").innerText="Humidity: " + data.current.humidity + "%";
             document.getElementById("uv").innerText="UV Index: " + data.current.uvi;
+        // call the fiveDayForecast function
         fiveDayForecast (data);
         });   
 }       
+        // extract the current temp, wind, and humidity looping for 5 days
         var i=0;
         var fiveDayForecast = function(data) {
         document.getElementById("fiveTitle").innerText="Five Day Forecast";
