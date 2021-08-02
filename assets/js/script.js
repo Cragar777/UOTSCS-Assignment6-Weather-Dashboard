@@ -1,10 +1,20 @@
 // Get the current date
 var rightNow = moment().format("MMMM Do, YYYY");
 
+// Get city entered by user
+var city="";
+var getCity = function() {
+city = document.getElementById("searchCity").value;
+console.log(city);
+
+// Call getCityCoord function to obtain coordinates of city
+getCityCoord(city);
+};
+
 // getCityCoord function to get coordinates for the requested city to pass to the next api
-function getCityCoord(){
+function getCityCoord(city){
 fetch(
-    "https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=7564c2bdba64a11de407d11468e95f3d"
+    "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=7564c2bdba64a11de407d11468e95f3d"
     )
 .then(
     function(res) {
@@ -32,7 +42,7 @@ function getWeather(lat, lon) {
           .then (function(data) {
             // extract the current temp, wind, humidity and uv index  
             console.log("getWeather function",data);
-            document.getElementById("cityDate").innerText=", Current Weather " + rightNow;
+            document.getElementById("cityDate").innerText=city + ", Current Weather " + rightNow;
             document.getElementById("temp").innerText="Temp: " + data.current.temp + "K";
             document.getElementById("wind").innerText="Wind: " + data.current.wind_speed + "MPH";
             document.getElementById("humidity").innerText="Humidity: " + data.current.humidity + "%";
@@ -58,8 +68,5 @@ function getWeather(lat, lon) {
         }
 }
 
-// var responseContainerEl=document.querySelector("#temp");
-// var currentTemp.setAttribute ('src', response.data.image_url);
-
-// responseContainerEl.appendChild(currentTemp);
+// Implement local storage for history.
 
